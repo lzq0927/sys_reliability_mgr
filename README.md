@@ -2,6 +2,10 @@
 
 用四个按需角色支持业务交付、技术竞争力和团队建设。通用包版本 0.1.0。
 
+[打开云端开发环境](https://codespaces.new/lzq0927/sys_reliability_mgr?quickstart=1) · [云端测试与下载](https://github.com/lzq0927/sys_reliability_mgr/actions/workflows/validate.yml) · [入口说明](docs/cloud-access.md)
+
+Codespaces 提供浏览器 IDE 和终端，首次创建自动初始化角色文件。当前尚无独立网页聊天服务，模型登录由所用客户端完成。
+
 ## 立即使用
 
 当前云端项目安装了主助手、可靠性技术助手。新聊天先打开本项目，再给出以下启动语；宿主没有自动发现 Skill 时直接指定文件。

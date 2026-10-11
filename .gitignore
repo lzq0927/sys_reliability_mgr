@@ -4,5 +4,6 @@
 /session-backups/
 /releases/
 /.agents/skills/
+/.local/
 __pycache__/
 *.pyc

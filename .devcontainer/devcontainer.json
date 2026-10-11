@@ -1,0 +1,11 @@
+{
+  "name": "Personal reliability assistant",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "remoteUser": "vscode",
+  "postCreateCommand": "python tools/bootstrap_workspace.py",
+  "customizations": {
+    "vscode": {
+      "settings": {"python.defaultInterpreterPath": "/usr/local/bin/python"}
+    }
+  }
+}

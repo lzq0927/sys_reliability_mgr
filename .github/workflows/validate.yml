@@ -1,0 +1,36 @@
+name: Validate assistant kit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check workspace initialization
+        run: python -m unittest discover -s tests -v
+      - name: Run checkpoint model tests
+        run: python -m unittest discover -s kit/evals/checkpoint-demo -p test_model.py -v
+      - name: Verify independent installation and package
+        run: python tools/verify_release.py
+      - name: Upload kit and verification report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sr-assistant-kit-${{ github.sha }}
+          path: |
+            releases/sr-assistant-kit-*.zip
+            releases/SHA256SUMS.json
+            releases/verification.json
+          if-no-files-found: error
+          retention-days: 30
