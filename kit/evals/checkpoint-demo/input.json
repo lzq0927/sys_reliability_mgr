@@ -1,0 +1,14 @@
+{
+  "scope": "synthetic",
+  "modelVersion": "integer-checkpoint-v1",
+  "horizonTicks": 120,
+  "checkpointCostTicks": 2,
+  "intervals": [4, 12],
+  "failureTicks": [11, 23, 47, 59, 83],
+  "assumptions": [
+    "All computations and persisted checkpoints are correct; no silent corruption.",
+    "Failure consumes one recovery tick and discards all uncommitted work.",
+    "Checkpoint persists atomically only after its full cost; failure interrupts it.",
+    "Only persisted work at the fixed horizon counts as delivered output."
+  ]
+}

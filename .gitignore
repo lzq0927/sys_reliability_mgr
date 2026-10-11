@@ -1,0 +1,8 @@
+# 工作记忆、本机配置和聊天记录不进入通用版本
+/workspace/
+/workspace.local.json
+/session-backups/
+/releases/
+/.agents/skills/
+__pycache__/
+*.pyc
